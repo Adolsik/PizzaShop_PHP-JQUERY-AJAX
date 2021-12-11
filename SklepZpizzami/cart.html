@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="style.css">
+<div class='tile'> <article class='tile is-child notification has-background-grey-lighter'>
+        <h1 class="title is-3" id="doZaplaty">Do zapłaty 0 zł</h1>
+        <hr>
+        <h2 class="title is-2" id="produktyWkoszyku"></h2>
+<script>
+        document.getElementById("doZaplaty").innerHTML = "Do zapłaty: " + cena + "zł";
+        for (i=0;i<koszyk.length;i++)
+        {
+        document.getElementById("produktyWkoszyku").innerHTML += "-  " + ilosc[i] +"x "+ koszyk[i] + " " + koszykcena[i] + "zł "
+        + "<button class='button is-danger' style='margin-top: 0.3vw' onclick='deleteItem("+i+")'>-</button>"
+        + "<button class='button is-success' style='margin-left: 0.5vw; margin-top: 0.3vw' onclick='addItem("+i+")'>+</button>"
+        +"<br>";
+         };
+</script>
+</article> </div>
+<button class='button is-success' onclick='finalise()' style='margin-left: 94%; margin-top: 0.5vw'>Zamów</button>

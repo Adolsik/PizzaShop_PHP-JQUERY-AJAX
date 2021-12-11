@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Pizzeria DODO</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="functions.js"></script>
+</head>
+<body>
+
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+          <a class="navbar-item" href="index.html">
+            <img src="Images/inne/logo.png" >
+          </a>
+      
+          <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
+        </div>
+      
+        <div id="navbarBasicExample" class="navbar-menu">
+          <div class="navbar-start">
+            <a class="navbar-item" id="Pizza">
+              Pizza
+            </a>
+              <a class="navbar-item" id="Napoje">
+                Napoje
+              </a>
+              <a class="navbar-item" id="Dodatki">
+                Dodatki
+              </a>
+              </div>
+          <div class="navbar-end">
+            <div class="navbar-item">
+              <div class="buttons">
+                <a class="button is-primary" id="Koszyk">
+                  <strong>Koszyk</strong>
+                </a>
+              </div>
+            </div>
+      </nav>
+
+<br>
+<section class="hero is-success">
+    <div class="hero-body">
+      <p class="title">
+        Witaj w DODO PIZZA!
+      </p>
+      <p class="subtitle">
+        Zapraszamy do skorzystania z naszej oferty. 
+      </p>
+    </div>
+  </section>
+
+    <div class="notification is-success" id="alert">
+        <strong id="alerttext"></strong>
+    </div>
+    <div class="block" id="ajaxContent">
+        <img src="Images/inne/pizzaMain.jpg">
+    </div>
+
+    <!--Ładowanie stron Ajaxem-->
+    <script>
+        $("#Pizza").click(function() {
+            $("#ajaxContent").load("Ajax/pizza.php");
+        });
+        $("#Napoje").click(function() {
+            $("#ajaxContent").load("Ajax/napoje.php");
+        });
+        $("#Dodatki").click(function() {
+            $("#ajaxContent").load("Ajax/dodatki.php");
+        });
+        $("#Koszyk").click(function() {
+            $("#ajaxContent").load("cart.html");
+        });  
+    </script>
+
+    <footer class="footer">
+        <div class="content has-text-centered">
+          <p>
+            <strong>DODO Pizza</strong> by <a href="https://github.com/Adolsik">Adrian Uryga</a>.
+          </p>
+        </div>
+      </footer>
+</body>
+
+</html>
